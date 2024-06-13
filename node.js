@@ -8,6 +8,9 @@ class Node {
     }
     }
     let firstNode = new Node("first")
+    let secondNode = new Node ("I am second")
+
+    firstNode.setNextNode(secondNode);
     
     console.log(firstNode.data)
     console.log(firstNode.next);
