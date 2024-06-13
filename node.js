@@ -4,7 +4,14 @@ class Node {
       this.next = null;
     }
     setNextNode(nextNode) {
-        this.next = nextNode;
+        if (nextNode instanceof Node || nextNode === null) {
+             this.next = nextNode;
+        } else {
+            throw new Error("This is not a node");
+        }
+    }
+    getNextNode(){
+       return this.next; 
     }
     }
     let firstNode = new Node("first")
@@ -14,5 +21,6 @@ class Node {
     
     console.log(firstNode.data)
     console.log(firstNode.next);
+    console.log(firstNode.getNextNode());
     module.exports = Node;
     
