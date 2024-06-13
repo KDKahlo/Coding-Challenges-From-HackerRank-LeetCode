@@ -14,13 +14,24 @@ class Node {
        return this.next; 
     }
     }
-    let firstNode = new Node("first")
-    let secondNode = new Node ("I am second")
+    let strawberryNode = new Node ('Berry Tasty')
+    let vanillaNode = new Node ('Vanilla')
+    let coconutNode = new Node ('Coconuts for Coconuts')
 
-    firstNode.setNextNode(secondNode);
+    vanillaNode.setNextNode(strawberryNode)
+    strawberryNode.setNextNode(coconutNode)
+    console.log (coconutNode)
+
+    let currentNode = vanillaNode
+    //console.log(currentNode)
+    while (currentNode) {
+        console.log(currentNode.data)
+        currentNode = currentNode.getNextNode();
+        
+    }
+
+    console.log(vanillaNode.next)
     
-    console.log(firstNode.data)
-    console.log(firstNode.next);
-    console.log(firstNode.getNextNode());
+    
     module.exports = Node;
     
