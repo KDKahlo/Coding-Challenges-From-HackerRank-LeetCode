@@ -22,7 +22,17 @@ addToHead(data){
         //if there is a currentHead, set the newHead's nextNode to equal currentHead
         newHead.setNextNode(currentHead);
     }
-
+}
+//define the addToTail method. It has a parameter called data.
+addToTail(data){
+    //create a tail variable with let since the tail will be changing.
+    let tail = this.head;
+    //now the tail is currently equal to the head, so we want to check if the list has any values.
+    //if there are no values, it means the list is empty and we need to create the head and tail with the value passed
+    if(!tail) {
+        this.head = new Node(data);
+        
+    }
 }
 }
 module.exports = LinkedList;
