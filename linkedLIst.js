@@ -31,7 +31,13 @@ addToTail(data){
     //if there are no values, it means the list is empty and we need to create the head and tail with the value passed
     if(!tail) {
         this.head = new Node(data);
-        
+        //we need to iterate over the list until we reach the tail. We can use a while loop for this
+    } else {
+        //since the tail has null at the end of the list, we can set the while loop to
+        //loop as long as the tail in not equal to null. When it is the loop should stop.
+        while(tail !== null) {
+            tail = tail.getNextNode();
+        }
     }
 }
 }
