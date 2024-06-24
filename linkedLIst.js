@@ -43,5 +43,10 @@ addToTail(data){
         // this.tail = new Node.setNextNode(data);
     }
 }
+// define a method called removeHead() method
+removeHead () {
+    //create a const variable called removedHead and set it equal to the list's head.
+    const removedHead = this.head;
+}
 }
 module.exports = LinkedList;
