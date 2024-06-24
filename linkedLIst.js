@@ -12,6 +12,16 @@ class LinkedList {
 addToHead(data){
     //inside the method, create a Node const variable named newHead. Pass data as the argument
     const newHead = new Node(data);
+    //create a const variable named currentHead and set it equal to list head
+    const currentHead = this.head;
+    //change the list's head to equal newHead
+    this.head = newHead;
+
+    //check if there is a currentHead in the list.
+    if (currentHead) {
+        //if there is a currentHead, set the newHead's nextNode to equal currentHead
+        newHead.setNextNode(currentHead);
+    }
 
 }
 }
