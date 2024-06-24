@@ -35,9 +35,12 @@ addToTail(data){
     } else {
         //since the tail has null at the end of the list, we can set the while loop to
         //loop as long as the tail in not equal to null. When it is the loop should stop.
-        while(tail !== null) {
+        while(tail.getNextNode !== null) {
             tail = tail.getNextNode();
         }
+        //set the tails next node equal to a new node that takes data as the argument.
+        tail.setNextNode(new Node(data));
+        // this.tail = new Node.setNextNode(data);
     }
 }
 }
