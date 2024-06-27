@@ -55,6 +55,7 @@ removeHead () {
     this.head = removedHead.getNextNode();
     //return the data from removedHead
     return removedHead.data;
+
 }
-}
+} 
 module.exports = LinkedList;
