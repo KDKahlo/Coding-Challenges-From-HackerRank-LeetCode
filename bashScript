@@ -1,0 +1,36 @@
+#!/bin/bash
+
+# Set your name
+MY_NAME="Kellie Dixon"
+
+# Read the last number from the file
+if [ ! -f last_number.txt ]; then
+  echo "0" > last_number.txt
+fi
+LAST_NUMBER=$(cat last_number.txt)
+
+# Calculate the starting and ending number for the new batch
+START_NUMBER=$((LAST_NUMBER + 1))
+END_NUMBER=$((LAST_NUMBER + 25))
+
+# Array to hold the names of the newly created files
+NEW_FILES=()
+
+# Loop to create 25 empty files
+for ((i = START_NUMBER; i <= END_NUMBER; i++))
+do
+  FILE_NAME="${MY_NAME} ${i}"
+  touch "$FILE_NAME"
+  NEW_FILES+=("$FILE_NAME")
+done
+
+# Update the last number in the tracking file
+echo $END_NUMBER > last_number.txt
+
+# Display the list of newly created files
+echo "Created files:"
+for FILE in "${NEW_FILES[@]}"; do
+  echo "$FILE"
+done
+
+echo "Created files ${MY_NAME} ${START_NUMBER} to ${MY_NAME} ${END_NUMBER}"
