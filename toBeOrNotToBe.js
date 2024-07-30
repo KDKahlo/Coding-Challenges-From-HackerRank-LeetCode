@@ -8,20 +8,59 @@
 // IN expect function value is 5
 // IN toBe function value is 5
 
-// if (5-expect) === (5-toBe) => true OTHERWISE "Not Equal"
-
-// IN notToBe function value is 5
-// if (5-expect) !=== (6-notToBe) => true OTHERWISE "Equal"
-function expect(val) {
- if (expect(val)) {
-   toBe = (val) => expect(val) === toBe(val)
-   
-        if (toBe(val) === expect(val)) {
-        return {"value": true}
-      }
-      else if(toBe(val) !== expect(val)) {
-        return {"value": "Not" }
-     }
-    } 
+let expect = function expect(val) {
+    return {
+    toBe(val1) {
+        if(val == val1) {
+            return true
+        } else {
+            return "not equal"
+        }
+    },
+    notToBe(val1) {
+        if(val !== val1) {
+            return {"value": true}
+        } else {
+            return {"value": "Equal"}
+        }
+    }}
 }
 console.log(expect(5).toBe(5))
+console.log(expect(4).notToBe(4))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let expect = function expect(val) {
+//   return {
+//       toBe(val2) {
+//         if (val == val2) {
+//             return {"value": true}
+//         } else {
+//             return {"value": "Not equal"}
+//         }
+//     },
+//      notToBe(val2) {
+//         if (val !== val2) {
+//             return {"value": true}
+//         } else {
+//             return {"value": "Equal"}
+//         }
+//     }
+//     }
+// }
+
+
+
