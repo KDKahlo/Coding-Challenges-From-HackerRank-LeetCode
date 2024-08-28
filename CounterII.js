@@ -7,33 +7,40 @@
 
 //third function is reset() --sets the current value to init
 
-//we need a variable for the calls --ex: calls = ["increment", "reset", "decrement"]
+//remember it should be an object not an array so you don't have to account for that.
 
 //we also need to assign each of the 3 functions the corresponding variables of increment, reset, decrement.
 
 
-init = 0;
-let createCounter = function(init) {
-    calls = [];
-    for (let index = 0; index < calls.length; index++) {
-        const element2count = calls[index];  
-    
-    {
-        if (element2count == "increment") {
-       return {increment(init) {
-            return init++
-        }}
-            }
-        else if (element2count == "decrement") {
 
-        }}
-        // decrement(init){
-        //     return init--
-        // }
-        // reset(init){
-        //     return init
-        // }
-       
-}}
-createCounter(5)
-increment()
+function createCounter(init) {
+    let current = init;
+    return {
+        increment: function () {
+            current+=1;
+            return current;            
+        },
+        decrement: function() {
+            current -=1;
+            return current;
+        },
+        reset: function() {
+            current =  init;
+            return init;
+        }
+    }
+    
+}
+// const counter = createCounter(5)
+// console.log(counter.increment())
+// console.log(counter.reset())
+// console.log(counter.decrement())
+
+const counter = createCounter(0)
+console.log(counter.increment())
+console.log(counter.increment())
+console.log(counter.decrement())
+console.log(counter.reset())
+console.log(counter.reset())
+
+
