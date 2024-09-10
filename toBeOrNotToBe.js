@@ -9,24 +9,30 @@
 // IN toBe function value is 5
 
 let expect = function expect(val) {
+
+    if(typeof val !== 'number') {
+        throw "Not Equal"
+    } else {
     return {
     toBe(val1) {
         if(val == val1) {
             return true
         } else {
-            return "not equal"
+            throw "Not Equal"
         }
     },
     notToBe(val1) {
         if(val !== val1) {
-            return {"value": true}
+            return  true
         } else {
-            return {"value": "Equal"}
+            return "Equal"
         }
     }}
 }
-console.log(expect(5).toBe(5))
+}
+console.log(expect(5).toBe(null))
 console.log(expect(4).notToBe(4))
+console.log(expect('10'))
 
 
 
